@@ -6,7 +6,7 @@ Summary(pl):	Program zarz±dzaj±cy kompilacj± programów w Haskellu
 Name:		hmake
 Version:	2.03
 Release:	3
-License:	Freely available
+License:	Free
 Group:		Development/Languages
 Source0:	ftp://ftp.cs.york.ac.uk/pub/haskell/%{name}/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ghc.patch
