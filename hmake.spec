@@ -1,19 +1,21 @@
 
 # _with_nhc	- build with nhc98, not ghc
 
-Summary:	hmake is a compilation manager for Haskell programs.
+Summary:	hmake is a compilation manager for Haskell programs
+Summary(pl):	Program zarz±dzaj±cy kompilacj± programów w Haskellu
 Name:		hmake
 Version:	2.03
 Release:	1
-Copyright:	Freely available
+License:	Freely available
 Group:		Development/Languages
 Group(de):	Entwicklung/Sprachen
 Group(pl):	Programowanie/Jêzyki
-URL:		http://www.cs.york.ac.uk/fp/%{name}/
 Source0:	ftp://ftp.cs.york.ac.uk/pub/haskell/%{name}/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ghc.patch
+URL:		http://www.cs.york.ac.uk/fp/%{name}/
 %{!?_with_nhc:BuildRequires:	ghc}
 %{?_with_nhc:BuildRequires:	nhc98}
+BuildRequires:	ed
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -24,6 +26,17 @@ is no need to construct or maintain a Makefile.
 Hmake interactive, or hi for short, is an interpreter-like environment
 that you can wrap over any common Haskell compiler to achieve an
 interactive development style rather like Hugs.
+
+%description -l pl
+hmake jest poleceniem podobnym do make(1) przeznaczonym do
+kompilowania programów w Haskellu. Zale¿no¶ci s± automatycznie
+wyci±gane z plików ¼ród³owych; nie trzeba tworzyæ ani nadzorowaæ
+Makefile.
+
+Hmake interactive (w skrócie hi) jest interaktywnym, podobnym do
+interpretera, ¶rodowiskiem, które mo¿na u¿ywaæ z dowolnym
+kompilatorem Haskella aby dostaæ interaktywne ¶rodowisko podobne do
+Hugs.
 
 %prep
 %setup -q
@@ -37,7 +50,7 @@ interactive development style rather like Hugs.
 %{?_with_nhc:--buildwith=nhc98} \
 	--buildopts="-O"
 
-%{__make} OPT="$RPM_OPT_FLAGS"
+%{__make} OPT="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
