@@ -1,0 +1,13 @@
+--- hmake-2.03/script/harch~	Thu Feb 22 18:15:23 2001
++++ hmake-2.03/script/harch	Wed Feb 25 16:17:52 2004
+@@ -13,8 +13,8 @@
+ 
+ if uname >/dev/null 2>&1
+ then
+-  if uname -p >/dev/null 2>&1
+-  then PROCESSOR=`uname -p`
++  if uname -m >/dev/null 2>&1
++  then PROCESSOR=`uname -m`
+     case "$PROCESSOR" in
+     unknown|*\ *)
+       PROCESSOR=`uname -m`
