@@ -65,14 +65,12 @@ wq
 EOF
 done
 
-gzip -9nf COPYRIGHT INSTALL README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz docs/hmake/*.*
+%doc COPYRIGHT INSTALL README docs/hmake/*.*
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/hmake
 %attr(755,root,root) %{_libdir}/hmake/pld-Linux/HInteractive
