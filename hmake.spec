@@ -5,7 +5,7 @@ Summary:	hmake is a compilation manager for Haskell programs
 Summary(pl):	Program zarz±dzaj±cy kompilacj± programów w Haskellu
 Name:		hmake
 Version:	2.03
-Release:	2
+Release:	3
 License:	Freely available
 Group:		Development/Languages
 Group(de):	Entwicklung/Sprachen
@@ -78,6 +78,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz docs/hmake/*.*
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/hmake
-%attr(755, root, root) %{_libdir}/hmake/pld-linux/{HInterative,MKprog,Older}
-%{_libdir}/hmake/pld-linux/{config,hmake.config}
+%attr(755,root,root) %{_libdir}/hmake/pld-linux/{HInterative,MKprog,Older,hmake.config}
+%{_libdir}/hmake/pld-linux/config
 %{_mandir}/*/*
