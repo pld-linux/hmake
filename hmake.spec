@@ -8,8 +8,6 @@ Version:	2.03
 Release:	3
 License:	Freely available
 Group:		Development/Languages
-Group(de):	Entwicklung/Sprachen
-Group(pl):	Programowanie/Jêzyki
 Source0:	ftp://ftp.cs.york.ac.uk/pub/haskell/%{name}/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ghc.patch
 URL:		http://www.cs.york.ac.uk/fp/%{name}/
