@@ -11,7 +11,7 @@ Group:		Development/Languages
 Source0:	ftp://ftp.cs.york.ac.uk/pub/haskell/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	f875df33882478b1f26be703271f2864
 Patch0:		%{name}-ghc.patch
-URL:		http://www.cs.york.ac.uk/fp/%{name}/
+URL:		http://www.cs.york.ac.uk/fp/hmake/
 %{!?_with_nhc:BuildRequires:	ghc}
 %{?_with_nhc:BuildRequires:	nhc98}
 BuildRequires:	ed
@@ -74,6 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYRIGHT INSTALL README docs/hmake/*.*
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/hmake
+%dir %{_libdir}/hmake/pld-Linux
 %attr(755,root,root) %{_libdir}/hmake/pld-Linux/HInteractive
 %attr(755,root,root) %{_libdir}/hmake/pld-Linux/MkProg
 %attr(755,root,root) %{_libdir}/hmake/pld-Linux/Older
