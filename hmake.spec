@@ -4,12 +4,12 @@
 Summary:	hmake is a compilation manager for Haskell programs
 Summary(pl):	Program zarz±dzaj±cy kompilacj± programów w Haskellu
 Name:		hmake
-Version:	3.08
+Version:	3.09
 Release:	1
 License:	Free
 Group:		Development/Languages
 Source0:	http://www.haskell.org/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	c01c9137185a89e29bec389718696a66
+# Source0-md5:	72ac1fbca710dd8be5926600b119b4f4
 Patch0:		%{name}-uname.patch
 URL:		http://www.haskell.org/hmake/
 %{!?_with_nhc:BuildRequires:	ghc}
