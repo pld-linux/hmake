@@ -15,6 +15,9 @@ URL:		http://www.haskell.org/hmake/
 %{!?_with_nhc:BuildRequires:	ghc}
 %{?_with_nhc:BuildRequires:	nhc98}
 BuildRequires:	ed
+BuildRequires:	gmp-devel
+BuildRequires:	ncurses-devel
+BuildRequires:	readline-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -43,6 +46,7 @@ Haskella aby dostaæ interaktywne ¶rodowisko podobne do Hugs.
 %build
 ./configure \
 	--prefix=%{_prefix} \
+	--libdir=%{_libdir}/%{name} \
 	--mandir=%{_mandir}/man1 \
 %{!?_with_nhc:--buildwith=ghc} \
 %{?_with_nhc:--buildwith=nhc98} \
@@ -53,9 +57,10 @@ Haskella aby dostaæ interaktywne ¶rodowisko podobne do Hugs.
 %install
 rm -rf $RPM_BUILD_ROOT
 ./configure \
-    --install \
-    --prefix=$RPM_BUILD_ROOT%{_prefix} \
-    --mandir=$RPM_BUILD_ROOT%{_mandir}/man1
+	--install \
+	--libdir=$RPM_BUILD_ROOT%{_libdir}/%{name} \
+	--prefix=$RPM_BUILD_ROOT%{_prefix} \
+	--mandir=$RPM_BUILD_ROOT%{_mandir}/man1
 %{__make} install
 
 # correct hardcoded build-root path in some scripts
@@ -74,11 +79,11 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYRIGHT INSTALL README docs/hmake/*.*
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/hmake
-%dir %{_libdir}/hmake/ix86-Linux
-%attr(755,root,root) %{_libdir}/hmake/ix86-Linux/HInteractive
-%attr(755,root,root) %{_libdir}/hmake/ix86-Linux/MkProg
-%attr(755,root,root) %{_libdir}/hmake/ix86-Linux/MkConfig
-%attr(755,root,root) %{_libdir}/hmake/ix86-Linux/Older
-%{_libdir}/hmake/ix86-Linux/config
-%{_libdir}/hmake/ix86-Linux/hmakerc
+%dir %{_libdir}/hmake/*-Linux
+%attr(755,root,root) %{_libdir}/hmake/*-Linux/HInteractive
+%attr(755,root,root) %{_libdir}/hmake/*-Linux/MkProg
+%attr(755,root,root) %{_libdir}/hmake/*-Linux/MkConfig
+%attr(755,root,root) %{_libdir}/hmake/*-Linux/Older
+%{_libdir}/hmake/*-Linux/config
+%{_libdir}/hmake/*-Linux/hmakerc
 %{_mandir}/*/*
