@@ -4,14 +4,14 @@
 Summary:	hmake is a compilation manager for Haskell programs
 Summary(pl):	Program zarz±dzaj±cy kompilacj± programów w Haskellu
 Name:		hmake
-Version:	2.03
-Release:	3
+Version:	3.08
+Release:	1
 License:	Free
 Group:		Development/Languages
-Source0:	ftp://ftp.cs.york.ac.uk/pub/haskell/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	f875df33882478b1f26be703271f2864
-Patch0:		%{name}-ghc.patch
-URL:		http://www.cs.york.ac.uk/fp/hmake/
+Source0:	http://www.haskell.org/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	c01c9137185a89e29bec389718696a66
+Patch0:		%{name}-uname.patch
+URL:		http://www.haskell.org/hmake/
 %{!?_with_nhc:BuildRequires:	ghc}
 %{?_with_nhc:BuildRequires:	nhc98}
 BuildRequires:	ed
@@ -38,7 +38,7 @@ Haskella aby dostaæ interaktywne ¶rodowisko podobne do Hugs.
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
 
 %build
 ./configure \
@@ -74,10 +74,11 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYRIGHT INSTALL README docs/hmake/*.*
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/hmake
-%dir %{_libdir}/hmake/pld-Linux
-%attr(755,root,root) %{_libdir}/hmake/pld-Linux/HInteractive
-%attr(755,root,root) %{_libdir}/hmake/pld-Linux/MkProg
-%attr(755,root,root) %{_libdir}/hmake/pld-Linux/Older
-%attr(755,root,root) %{_libdir}/hmake/pld-Linux/hmake.config
-%{_libdir}/hmake/pld-Linux/config
+%dir %{_libdir}/hmake/ix86-Linux
+%attr(755,root,root) %{_libdir}/hmake/ix86-Linux/HInteractive
+%attr(755,root,root) %{_libdir}/hmake/ix86-Linux/MkProg
+%attr(755,root,root) %{_libdir}/hmake/ix86-Linux/MkConfig
+%attr(755,root,root) %{_libdir}/hmake/ix86-Linux/Older
+%{_libdir}/hmake/ix86-Linux/config
+%{_libdir}/hmake/ix86-Linux/hmakerc
 %{_mandir}/*/*
