@@ -32,9 +32,8 @@ wyci±gane z plików ¼ród³owych; nie trzeba tworzyæ ani nadzorowaæ
 Makefile.
 
 Hmake interactive (w skrócie hi) jest interaktywnym, podobnym do
-interpretera, ¶rodowiskiem, które mo¿na u¿ywaæ z dowolnym
-kompilatorem Haskella aby dostaæ interaktywne ¶rodowisko podobne do
-Hugs.
+interpretera, ¶rodowiskiem, które mo¿na u¿ywaæ z dowolnym kompilatorem
+Haskella aby dostaæ interaktywne ¶rodowisko podobne do Hugs.
 
 %prep
 %setup -q
