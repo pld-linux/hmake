@@ -9,6 +9,7 @@ Release:	3
 License:	Free
 Group:		Development/Languages
 Source0:	ftp://ftp.cs.york.ac.uk/pub/haskell/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	f875df33882478b1f26be703271f2864
 Patch0:		%{name}-ghc.patch
 URL:		http://www.cs.york.ac.uk/fp/%{name}/
 %{!?_with_nhc:BuildRequires:	ghc}
