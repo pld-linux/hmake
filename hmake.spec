@@ -78,6 +78,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz docs/hmake/*.*
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/hmake
-%attr(755,root,root) %{_libdir}/hmake/pld-linux/{HInterative,MKprog,Older,hmake.config}
-%{_libdir}/hmake/pld-linux/config
+%attr(755,root,root) %{_libdir}/hmake/pld-Linux/HInteractive
+%attr(755,root,root) %{_libdir}/hmake/pld-Linux/MkProg
+%attr(755,root,root) %{_libdir}/hmake/pld-Linux/Older
+%attr(755,root,root) %{_libdir}/hmake/pld-Linux/hmake.config
+%{_libdir}/hmake/pld-Linux/config
 %{_mandir}/*/*
