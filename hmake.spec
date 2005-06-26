@@ -1,5 +1,8 @@
-%bcond_with nhc			# build with nhc98, not ghc
-Summary:	hmake is a compilation manager for Haskell programs
+#
+# Conditional build:
+%bcond_with	nhc	# build with nhc98, not ghc
+#
+Summary:	hmake - a compilation manager for Haskell programs
 Summary(pl):	Program zarz±dzaj±cy kompilacj± programów w Haskellu
 Name:		hmake
 Version:	3.09
