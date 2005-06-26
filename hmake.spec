@@ -1,6 +1,4 @@
-
-# _with_nhc	- build with nhc98, not ghc
-
+%bcond_with nhc			# build with nhc98, not ghc
 Summary:	hmake is a compilation manager for Haskell programs
 Summary(pl):	Program zarz±dzaj±cy kompilacj± programów w Haskellu
 Name:		hmake
@@ -8,15 +6,15 @@ Version:	3.09
 Release:	1
 License:	Free
 Group:		Development/Languages
-Source0:	http://www.haskell.org/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://www.haskell.org/hmake/%{name}-%{version}.tar.gz
 # Source0-md5:	72ac1fbca710dd8be5926600b119b4f4
 Patch0:		%{name}-uname.patch
 URL:		http://www.haskell.org/hmake/
-%{!?_with_nhc:BuildRequires:	ghc}
-%{?_with_nhc:BuildRequires:	nhc98}
 BuildRequires:	ed
+%{!?with_nhc:BuildRequires:	ghc}
 BuildRequires:	gmp-devel
 BuildRequires:	ncurses-devel
+%{?with_nhc:BuildRequires:      nhc98}
 BuildRequires:	readline-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -48,11 +46,12 @@ Haskella aby dostaæ interaktywne ¶rodowisko podobne do Hugs.
 	--prefix=%{_prefix} \
 	--libdir=%{_libdir}/%{name} \
 	--mandir=%{_mandir}/man1 \
-%{!?_with_nhc:--buildwith=ghc} \
-%{?_with_nhc:--buildwith=nhc98} \
+%{!?with_nhc:--buildwith=ghc} \
+%{?with_nhc:--buildwith=nhc98} \
 	--buildopts="-O"
 
-%{__make} OPT="%{rpmcflags}"
+%{__make} \
+	OPT="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
