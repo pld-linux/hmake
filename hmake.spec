@@ -19,6 +19,8 @@ BuildRequires:	gmp-devel
 BuildRequires:	ncurses-devel
 %{?with_nhc:BuildRequires:      nhc98}
 BuildRequires:	readline-devel
+# no Haskell compiler there
+ExcludeArch:	alpha
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
