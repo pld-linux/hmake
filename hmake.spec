@@ -6,7 +6,7 @@ Summary:	hmake - a compilation manager for Haskell programs
 Summary(pl):	Program zarz±dzaj±cy kompilacj± programów w Haskellu
 Name:		hmake
 Version:	3.10
-Release:	3
+Release:	4
 License:	Free
 Group:		Development/Languages
 Source0:	http://www.haskell.org/hmake/%{name}-%{version}.tar.gz
@@ -19,8 +19,6 @@ BuildRequires:	gmp-devel
 BuildRequires:	ncurses-devel
 %{?with_nhc:BuildRequires:      nhc98}
 BuildRequires:	readline-devel
-# no Haskell compiler there
-ExcludeArch:	alpha
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
