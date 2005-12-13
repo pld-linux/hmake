@@ -1,0 +1,13 @@
+--- hmake-3.10/src/interpreter/HInteractive.hs	2005-03-02 17:14:28.000000000 +0000
++++ hmake-3.10.ok/src/interpreter/HInteractive.hs	2005-12-13 17:57:34.720631298 +0000
+@@ -7,8 +7,8 @@
+ import List
+ import Maybe
+ 
+-import Config		-- from src/hmake
+-import Compiler		-- from src/hmake
++import Config
++import Compiler
+ import HiConfig
+ import SimpleLineEditor (delChars, getLineEdited, initialise, restore)
+ import LexModule
