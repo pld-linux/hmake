@@ -3,7 +3,7 @@
 %bcond_with	nhc	# build with nhc98, not ghc
 #
 Summary:	hmake - a compilation manager for Haskell programs
-Summary(pl):	Program zarz±dzaj±cy kompilacj± programów w Haskellu
+Summary(pl.UTF-8):   Program zarzÄ…dzajÄ…cy kompilacjÄ… programÃ³w w Haskellu
 Name:		hmake
 Version:	3.10
 Release:	5
@@ -31,15 +31,15 @@ Hmake interactive, or hi for short, is an interpreter-like environment
 that you can wrap over any common Haskell compiler to achieve an
 interactive development style rather like Hugs.
 
-%description -l pl
+%description -l pl.UTF-8
 hmake jest poleceniem podobnym do make(1) przeznaczonym do
-kompilowania programów w Haskellu. Zale¿no¶ci s± automatycznie
-wyci±gane z plików ¼ród³owych; nie trzeba tworzyæ ani nadzorowaæ
+kompilowania programÃ³w w Haskellu. ZaleÅ¼noÅ›ci sÄ… automatycznie
+wyciÄ…gane z plikÃ³w ÅºrÃ³dÅ‚owych; nie trzeba tworzyÄ‡ ani nadzorowaÄ‡
 Makefile.
 
-Hmake interactive (w skrócie hi) jest interaktywnym, podobnym do
-interpretera, ¶rodowiskiem, które mo¿na u¿ywaæ z dowolnym kompilatorem
-Haskella aby dostaæ interaktywne ¶rodowisko podobne do Hugs.
+Hmake interactive (w skrÃ³cie hi) jest interaktywnym, podobnym do
+interpretera, Å›rodowiskiem, ktÃ³re moÅ¼na uÅ¼ywaÄ‡ z dowolnym kompilatorem
+Haskella aby dostaÄ‡ interaktywne Å›rodowisko podobne do Hugs.
 
 %prep
 %setup -q
