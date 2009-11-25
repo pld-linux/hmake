@@ -1,4 +1,10 @@
 #
+# TODO:
+# - hmake tries to call `ghc-pkg -l` (instead of `ghc list`) and
+#  `ghc --show-package=X` instead of `ghc list X`). It also calls
+#   with the --field=import_dirs option, which doesn't exist anymore.
+#   In short it does not work/build with ghc 6.10
+#
 # Conditional build:
 %bcond_with	nhc	# build with nhc98, not ghc
 #
